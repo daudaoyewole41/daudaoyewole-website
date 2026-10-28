@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal portfolio website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="logo4.jpg" class="logo" alt="Dauda Oyewole logo">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#About">About Me</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#planner">Academic Planner</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Web Developer - UI/UX Designer</p>
+                <h1>Hi, I'm <span>Dauda Oyewole</span> <br>from Nigeria</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="About">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="linkin.jpg" alt="Portrait">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I’m a tech enthusiast, problem-solver, and growth-driven individual with a strong interest in
+                        technology, innovation,
+                        and automation. I enjoy turning challenges into opportunities, learning new skills, and finding
+                        smarter ways to get
+                        things done. I’m always exploring new opportunities to grow, make a difference, and create a
+                        better future through
+                        technology.</p>
+
+                    <div class="tab-titles">
+                        <button type="button" class="tab-links active-links"
+                            onclick="opentab(event, 'Skills')">Skills</button>
+                        <button type="button" class="tab-links"
+                            onclick="opentab(event, 'Experience')">Experience</button>
+                        <button type="button" class="tab-links" onclick="opentab(event, 'Education')">Education</button>
+                    </div>
+                    <div class="tabcontents active-tab" id="Skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web App development</li>
+                            <li><span>App development</span><br>Building Andriod/IOS Apps</li>
+                        </ul>
+                    </div>
+                    <div class="tabcontents" id="Experience">
+                        <ul>
+                            <li><span>2025 - Current</span><br>UI/UX Designer at DO institute</li>
+                            <li><span>2024 - 2025</span><br>Web developer at DO institute</li>
+                            <li><span>2023</span><br>Intership at DO institute</li>
+                        </ul>
+                    </div>
+                    <div class="tabcontents" id="Education">
+                        <ul>
+                            <li><span>2026</span><br>BSC at Miva Open University </li>
+                            <li><span>2017</span><br>OND at Moshood Abiola Polytechnic</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">Projects</h1>
+            <div class="Projects-list">
+                <div class="Projects">
+                    <img src="PR1.jpg" alt="">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>The App connect you to talented people around the World. Download on Playstore</p>
+                    </div>
+                </div>
+                <div class="Projects">
+                    <img src="PR22.jpg" alt="">
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>The App connect you to talented people around the World. Download on Playstore</p>
+                    </div>
+                </div>
+                <div class="Projects">
+                    <img src="PR3.jpg" alt="">
+                    <div class="layer">
+                        <h3>Online shopping App</h3>
+                        <p>The App connect buyer and seller around the World. Download on Playstore</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="button">See more</a>
+        </div>
+    </div>
+
+    <div id="planner">
+        <div class="container">
+            <h1 class="sub-title">Academic Planner</h1>
+            <p class="planner-intro">Add tasks, track your progress, and keep your studies on schedule.</p>
+            <form class="planner-form" id="task-form">
+                <label class="visually-hidden" for="task-input">New task</label>
+                <input id="task-input" name="task" type="text" placeholder="What do you need to do?" required>
+                <button type="submit">Add task</button>
+            </form>
+            <ul class="task-list" id="task-list" aria-label="Planner tasks"></ul>
+            <p class="planner-empty" id="planner-empty">No tasks yet. Add one to get started.</p>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p>Email: daudaoyewole41@gmail.com</p>
+                    <p>Telephone: +2349035926669</p>
+
+                </div>
+                <div class="contact-right">
+                    <form action="">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="number" number="phone number" placeholder="Your Phone number" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="button button2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © DaudaOyewole designed it</p>
+        </div>
+    </div>
+
+
+    <script>
+        const tabLinks = document.getElementsByClassName("tab-links");
+        const tabContents = document.getElementsByClassName("tabcontents");
+        function opentab(event, tabname) {
+            for (const tabLink of tabLinks) {
+                tabLink.classList.remove("active-links");
+            }
+            for (const tabContent of tabContents) {
+                tabContent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-links");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        const taskForm = document.getElementById("task-form");
+        const taskInput = document.getElementById("task-input");
+        const taskList = document.getElementById("task-list");
+        const plannerEmpty = document.getElementById("planner-empty");
+
+        taskForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const taskText = taskInput.value.trim();
+            if (!taskText) {
+                taskInput.focus();
+                return;
+            }
+
+            const taskItem = document.createElement("li");
+            taskItem.className = "task-item";
+
+            const completeButton = document.createElement("button");
+            completeButton.type = "button";
+            completeButton.className = "task-complete";
+            completeButton.setAttribute("aria-label", "Mark task as completed");
+            completeButton.setAttribute("aria-pressed", "false");
+            completeButton.addEventListener("click", function () {
+                const isComplete = taskItem.classList.toggle("completed");
+                completeButton.setAttribute("aria-pressed", String(isComplete));
+                completeButton.setAttribute(
+                    "aria-label",
+                    isComplete ? "Mark task as incomplete" : "Mark task as completed"
+                );
+            });
+
+            const taskLabel = document.createElement("span");
+            taskLabel.className = "task-label";
+            taskLabel.textContent = taskText;
+
+            const deleteButton = document.createElement("button");
+            deleteButton.type = "button";
+            deleteButton.className = "task-delete";
+            deleteButton.textContent = "Delete";
+            deleteButton.setAttribute("aria-label", "Delete task: " + taskText);
+            deleteButton.addEventListener("click", function () {
+                taskItem.remove();
+                plannerEmpty.hidden = taskList.children.length > 0;
+            });
+
+            taskItem.append(completeButton, taskLabel, deleteButton);
+            taskList.append(taskItem);
+            plannerEmpty.hidden = true;
+            taskForm.reset();
+            taskInput.focus();
+        });
+    </script>
+</body>
+
+</html>
